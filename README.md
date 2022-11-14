@@ -1,16 +1,20 @@
 # Spherics Python module
 
-This is a very small Python module intended to recyle some common functions
-to be used when dealing with geometry and data on the sphere. 
+This is a small Python module that holds some functions to be used in data
+analysis in spheres.
 
-It encompasses several functions to translate between 3-dimensional position
-vectors and longitude and latitude in degrees and radians, generation of
-a uniform distribution of random points in the sphere given by their
-longitude and latitude and generation of Gaussian-like clusters of points
-on the sphere, as well as a distance function based on the Haversine
-formula which can be used as a custom metric for clustering of data
-on the sphere, correcting the topological error commonly encountered when
-clustering longitudes and latitudes with the Euclidean metric.
+Some of the functions that it has:
+
+    - `spheric_distance`: calculates geodesic distance between two
+        points on the sphere from their geographical longitude and latitude.
+        Based on a simplification of the [Vincenty](https://en.wikipedia.org/wiki/Vincenty%27s_formulae) 
+        / [Haversine](https://en.wikipedia.org/wiki/Haversine_formula) formulae.
+    - `spheric_uniform`: generates a random truly uniform distribution of points
+        on the sphere, outputs array of longitudes and latitudes.
+    - `spheric_clusters`: generates Gaussian-like clusters of points together
+        with a label. Useful for verification of clusterization algorithms.
+    - Some commonplace transformations between 3D-vectors and geographical
+        spherical coordinates.
 
 ## Installation
 
@@ -20,3 +24,8 @@ You can use `spherics.py` as is or clone the repository with
 
 You need only `import spherics` from your python project to access all functions
 within.
+
+
+## License
+
+See LICENSE file. GPLv3.
